@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="so-SO">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Lacag ka Hel Su'aalaha</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4270866898297862" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <div class="user-header">
+      <h1>💰 Ku Soo Dhawaaw, <span id="user-name">Isticmaale</span>!</h1>
+      <p>Lacagta aad maanta heli karto: <strong>$50.00</strong></p>
+      <button class="logout-btn" onclick="logout()">🚪 Bax</button>
+    </div>
+
+    <!-- AdSense Banner Ad -->
+    <div class="ad-banner">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4270866898297862"
+           data-ad-slot="8888888888"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="container">
+      <div class="user-stats">
+        <div class="stat-card">
+          <div class="stat-number" id="total-earned">$0.00</div>
+          <p>Wadarta Lacagta</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="completed-surveys">0</div>
+          <p>Surveys La Dhameeyay</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="available-surveys">6</div>
+          <p>Surveys Diyaar ah</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="join-date">2024</div>
+          <p>Taariikhda Bilaabay</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🎯 Surveys Diyaar ah - Maanta</h2>
+        <p>Halkan waxaad ka heli kartaa dhammaan surveys-ka maanta diyaar ah. Mid walba wuxuu ku siinayaa lacag u dhaxaysa $5-$50.</p>
+
+        <div class="survey-grid">
+          <div class="survey-card">
+            <div class="survey-reward">$15</div>
+            <h3>📊 Consumer Survey</h3>
+            <p>Su'aalo fudud oo ku saabsan alaabta aad isticmaasho maalin kasta. Waqti: 10-15 daqiiqo.</p>
+            <button class="start-survey-btn" onclick="startSurvey('consumer', 15)">🚀 Bilaw Survey-ga</button>
+          </div>
+
+          <div class="survey-card">
+            <div class="survey-reward">$25</div>
+            <h3>🎮 App Testing</h3>
+            <p>Tijaabi app cusub oo Android/iPhone oo ka bixi ra'yiga. Waqti: 20-25 daqiiqo.</p>
+            <button class="start-survey-btn" onclick="startSurvey('app-testing', 25)">🚀 Bilaw Survey-ga</button>
+          </div>
+
+          <div class="survey-card">
+            <div class="survey-reward">$12</div>
+            <h3>📝 Data Entry</h3>
+            <p>Gali xogta fudud ee Microsoft Excel. Waqti: 15-20 daqiiqo.</p>
+            <button class="start-survey-btn" onclick="startSurvey('data-entry', 12)">🚀 Bilaw Survey-ga</button>
+          </div>
+
+          <div class="survey-card">
+            <div class="survey-reward">$30</div>
+            <h3>🔍 Market Research</h3>
+            <p>Cilmi baaris ku saabsan suuqa cusub. Waqti: 25-30 daqiiqo.</p>
+            <button class="start-survey-btn" onclick="startSurvey('market-research', 30)">🚀 Bilaw Survey-ga</button>
+          </div>
+
+          <div class="survey-card">
+            <div class="survey-reward">$20</div>
+            <h3>📱 Social Media Study</h3>
+            <p>Su'aalo ku saabsan adeegsashada social media. Waqti: 15-20 daqiiqo.</p>
+            <button class="start-survey-btn" onclick="startSurvey('social-media', 20)">🚀 Bilaw Survey-ga</button>
+          </div>
+
+          <div class="survey-card">
+            <div class="survey-reward">$18</div>
+            <h3>🏪 Shopping Habits</h3>
+            <p>Weydiimo ku saabsan qaabka aad wax u iibsato. Waqti: 12-18 daqiiqo.</p>
+            <button class="start-survey-btn" onclick="startSurvey('shopping', 18)">🚀 Bilaw Survey-ga</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AdSense In-Content Ad -->
+      <div class="ad-banner">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-4270866898297862"
+             data-ad-slot="9999999999"></ins>
+      </div>
+
+      <div class="card">
+        <h2>💳 Lacagta Soo Saarka</h2>
+        <p>Marka aad $10 gasho, waxaad lacagta ku heli kartaa:</p>
+        <div class="withdrawal-methods">
+          <div class="method">
+            <h4>💳 PayPal</h4>
+            <p>24 saacadood gudahood</p>
+          </div>
+          <div class="method">
+            <h4>📱 Zaad Service</h4>
+            <p>Isla markiiba</p>
+          </div>
+          <div class="method">
+            <h4>🏦 EVC Plus</h4>
+            <p>12 saacadood gudahood</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+    // Initialize AdSense ads safely
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch(e) {
+      console.log('AdSense initialization skipped');
+    }
+
+    console.log('Dashboard loaded successfully');
+  </script>
+</body>
+</html>

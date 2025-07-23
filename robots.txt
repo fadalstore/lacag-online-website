@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fadalstore.github.io/Bld/sitemap.xml

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin Panel</title></head>
+<body>
+  <h1>Admin Panel</h1>
+  {% if message %}<p style="color:green;">{{ message }}</p>{% endif %}
+  <a href="{{ url_for('logout') }}">Logout</a>
+  <hr>
+  {% for filename, content in files.items() %}
+    <h3>Edit {{ filename }}</h3>
+    <form method="post">
+      <input type="hidden" name="filename" value="{{ filename }}">
+      <textarea name="content" rows="15" cols="100">{{ content }}</textarea><br>
+      <button type="submit">Save</button>
+    </form>
+    <hr>
+  {% endfor %}
+</body>
+</html>
